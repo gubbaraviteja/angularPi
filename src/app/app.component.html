@@ -3,18 +3,36 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="100" height="100" alt="Angular Logo"
+       src="https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/pi.jpg">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="container">
+  <div class="pi-exam item-left">
+    <div *ngFor="let piPart of pi100" class="pi-practise-fact">{{piPart}}</div>
+  </div>
+  <div class="item-right">
+    <input *ngFor="let piPart of pi100; let i = index" type="text" class="pi-practise"
+           [ngClass]="pi100UserInput[i] && piPart.includes(pi100UserInput[i]) ? 'correct' : 'false'"
+           [(ngModel)]="pi100UserInput[i]">
+  </div>
+  <div class="item-3">
+    <div id="input-number">
+      <ul>
+        <li *ngFor="let item of piInput; let i = index">{{i}}</li>
+      </ul>
+    </div>
+    <div id="pi-translator-input-div">
+      <input *ngFor="let item of piInput; let i = index" type="text" class="pi-translator-input"
+             [(ngModel)]="piInput[i]">
+    </div>
+  </div>
+  <div class="item-4">
+    <textarea name="pi" id="id" [(ngModel)]="pi" class="pi-input" cols="70" rows="3"></textarea>
+  </div>
+  <div class="pi-tranlsated-input" class="item-5">
+    <div class="pi-tranlsated-input">
+      <span style="font-family: sans-serif;">{{tranlsate()}}</span>
+    </div>
+  </div>
+</div>
